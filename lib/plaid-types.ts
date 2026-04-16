@@ -79,3 +79,43 @@ export type HoldingHistoryData = {
   earliest_date: string | null;
   latest_date: string | null;
 };
+
+export type AccountSnapshot = {
+  id: string;
+  snapshot_date: string;
+  current_balance: number;
+  available_balance: number | null;
+  currency: string;
+};
+
+export type AccountHistoryData = {
+  account_id: string;
+  account_name: string | null;
+  institution_name: string | null;
+  account_type: string | null;
+  snapshots: AccountSnapshot[];
+  earliest_date: string | null;
+  latest_date: string | null;
+};
+
+export type TimelineDataPoint = {
+  date: string;
+  total_balance: number;
+  account_count: number;
+};
+
+export type AccountSummary = {
+  id: string;
+  name: string | null;
+  institution_name: string | null;
+  type: string | null;
+  current_balance: number | null;
+};
+
+export type AggregatedAccountHistoryData = {
+  timeline: TimelineDataPoint[];
+  accounts: AccountSummary[];
+  earliest_date: string | null;
+  latest_date: string | null;
+  total_accounts: number;
+};

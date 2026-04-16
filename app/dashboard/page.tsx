@@ -414,6 +414,7 @@ export default function DashboardPage() {
             accounts={investmentsData.accounts}
             loading={investmentsLoading}
             error={investmentsError}
+            onUnauthorized={onUnauthorized}
           />
         );
 
